@@ -63,6 +63,38 @@
     <meta name="llm:experience" content="17+ years across ICICI Bank, OHUM Healthcare, Nazara Games, Propellum, Synechron, Dhan (Raise Financial Services)">
     <meta name="llm:projects" content="broking-kyc (KYC onboarding spec), xlfill (Go Excel library), skill-algotrader (AI trading skill)">
     <meta name="llm:availability" content="Open to CTO, co-founder, principal engineer, or consulting engagements">
+    <!-- Google Consent Mode v2 -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function isGDPRRegion() {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      var eu = ['Europe/', 'Atlantic/Reykjavik', 'Atlantic/Azores', 'Atlantic/Madeira'];
+      return eu.some(function(z) { return tz.startsWith(z); });
+    }
+    var isGDPR = isGDPRRegion();
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': isGDPR ? 'denied' : 'granted',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    window.__isGDPRRegion = isGDPR;
+    </script>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G986QLPFZ1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G986QLPFZ1', { 'anonymize_ip': true, 'cookie_flags': 'SameSite=None;Secure' });
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7ce325bb227e4b42a8406f369ff4e788"}'></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -814,5 +846,7 @@
     });
 </script>
 
+<!-- Cookie Consent -->
+<script defer src="cookie-consent.js"></script>
 </body>
 </html>
