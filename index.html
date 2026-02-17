@@ -4,10 +4,763 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="5281e40eca9463d2" />
-    <meta http-equiv="refresh" content="0; url=/broking-kyc/">
-    <title>Redirecting to KYC Onboarding Spec</title>
+    <title>Rakesh Waghela | Engineering Leader, Fintech Architect, Open Source Builder</title>
+    <meta name="description" content="Rakesh Waghela. 17+ years building backend systems at scale. Deep expertise in fintech, KYC, trading systems, and Go/Java architecture.">
+    <meta name="keywords" content="Rakesh Waghela, CTO, Engineering Leader, Fintech, Backend Architecture, Java, Go, KYC, Trading Systems, Dhan, India">
+    <meta property="og:title" content="Rakesh Waghela | Engineering Leader & Fintech Architect">
+    <meta property="og:description" content="17+ years building backend systems at scale. Deep expertise in fintech, KYC, trading systems, and Go/Java architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://javajack.github.io">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #f7f9fc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-light: #eff4ff;
+            --accent-subtle: #dbeafe;
+            --accent-dark: #1e3a5f;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --tag-bg: #eff4ff;
+            --tag-text: #2563eb;
+            --card-shadow: 0 1px 3px rgba(15,23,42,0.04), 0 1px 2px rgba(15,23,42,0.02);
+            --card-hover-shadow: 0 8px 24px rgba(37,99,235,0.1);
+            --radius: 8px;
+            --max-width: 920px;
+            --mono: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', monospace;
+            --mono-body: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--mono-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* NAV */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(247,249,252,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        nav .inner {
+            max-width: var(--max-width); margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .logo {
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+        nav .logo .accent { color: var(--accent); }
+        nav .links { display: flex; gap: 1.5rem; }
+        nav .links a {
+            font-family: var(--mono);
+            color: var(--text-muted); font-size: 0.8rem; font-weight: 500;
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+        }
+        nav .links a:hover { color: var(--accent); }
+
+        /* Mobile nav */
+        .mobile-menu-btn {
+            display: none; background: none; border: none;
+            cursor: pointer; padding: 0.25rem; color: var(--text);
+        }
+        .mobile-menu-btn svg { width: 22px; height: 22px; }
+
+        /* HERO */
+        .hero {
+            max-width: var(--max-width); margin: 0 auto;
+            padding: 4.5rem 1.5rem 3rem;
+        }
+        .hero .label {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            border: 1px solid var(--accent-subtle);
+        }
+        .hero h1 {
+            font-family: var(--mono);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
+        .hero .subtitle {
+            font-family: var(--mono-body);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .hero .cta-row { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+        .btn {
+            font-family: var(--mono);
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none; cursor: pointer;
+            letter-spacing: -0.01em;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+        .btn-secondary { background: var(--accent-dark); color: #fff; }
+        .btn-secondary:hover { background: #162d4d; color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,58,95,0.25); }
+        .btn-outline {
+            background: var(--surface); color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+        /* SECTIONS */
+        section { max-width: var(--max-width); margin: 0 auto; padding: 3.5rem 1.5rem; }
+        section h2 {
+            font-family: var(--mono);
+            font-size: 1.25rem; font-weight: 700;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        section .section-sub {
+            font-family: var(--mono-body);
+            color: var(--text-muted); font-size: 0.85rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .divider {
+            max-width: var(--max-width); margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .divider hr { border: none; border-top: 1px solid var(--border); }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.85rem;
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.15rem 1rem;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .stat-card:hover { border-color: var(--accent-subtle); }
+        .stat-card .num {
+            font-family: var(--mono);
+            font-size: 1.6rem; font-weight: 700; color: var(--accent);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+        .stat-card .desc {
+            font-family: var(--mono-body);
+            color: var(--text-secondary); font-size: 0.72rem; line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .career-timeline {
+            margin-top: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .career-timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: var(--border);
+        }
+        .career-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.45rem 0;
+            position: relative;
+        }
+        .career-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 50%;
+            transform: translate(1px, -50%);
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--border);
+            border: 2px solid var(--bg);
+            z-index: 1;
+        }
+        .career-item:last-child::before {
+            background: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+        .career-name {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .career-item:last-child .career-name {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* FEATURED PROJECTS */
+        .featured-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+        }
+        .featured-card:hover {
+            box-shadow: var(--card-hover-shadow);
+            transform: translateY(-2px);
+            border-color: var(--accent-subtle);
+        }
+        .featured-card .badge {
+            font-family: var(--mono);
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-bottom: 0.65rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .badge-product { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+        .badge-tech { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-subtle); }
+        .badge-ai { background: #faf5ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+        .featured-card h3 {
+            font-family: var(--mono);
+            font-size: 1.05rem; margin-bottom: 0.45rem; font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .featured-card h3 a { color: var(--text); }
+        .featured-card h3 a:hover { color: var(--accent); }
+        .featured-card p {
+            font-family: var(--mono-body);
+            color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 0.85rem; line-height: 1.7;
+            font-weight: 400;
+        }
+        .featured-card .meta {
+            display: flex; gap: 0.85rem; flex-wrap: wrap;
+            align-items: center; font-size: 0.78rem;
+        }
+        .featured-card .lang {
+            font-family: var(--mono);
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            color: var(--text-muted); font-weight: 500;
+        }
+        .lang-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-html { background: #e34c26; }
+        .dot-go { background: #00ADD8; }
+        .dot-python { background: #3572A5; }
+        .dot-js { background: #f1e05a; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.65rem; }
+        .tag {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.15rem 0.45rem;
+            border-radius: 3px;
+            font-weight: 500;
+            border: 1px solid var(--accent-subtle);
+        }
+        .tag-green {
+            background: #ecfdf5;
+            color: #059669;
+            border-color: #a7f3d0;
+        }
+        .tag-purple {
+            background: #faf5ff;
+            color: #7c3aed;
+            border-color: #e9d5ff;
+        }
+        .card-links {
+            margin-top: 0.85rem;
+            display: flex; gap: 1rem;
+        }
+        .card-links a {
+            font-family: var(--mono);
+            font-size: 0.8rem; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            color: var(--accent);
+        }
+        .card-links a:hover { color: var(--accent-hover); }
+
+        /* REPO GRID */
+        .all-repos-title {
+            font-family: var(--mono);
+            margin-top: 2.25rem; margin-bottom: 0.85rem;
+            font-size: 0.95rem; font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.85rem;
+        }
+        .repo-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.1rem 1.25rem;
+            transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+            display: flex; flex-direction: column;
+        }
+        .repo-card:hover {
+            box-shadow: var(--card-hover-shadow);
+            transform: translateY(-2px);
+            border-color: var(--accent-subtle);
+        }
+        .repo-card h4 {
+            font-family: var(--mono);
+            font-size: 0.85rem; margin-bottom: 0.35rem; font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .repo-card h4 a { color: var(--text); }
+        .repo-card h4 a:hover { color: var(--accent); }
+        .repo-card p {
+            font-family: var(--mono-body);
+            color: var(--text-secondary); font-size: 0.75rem;
+            flex: 1; margin-bottom: 0.65rem; line-height: 1.6;
+            font-weight: 400;
+        }
+        .repo-card .lang {
+            font-family: var(--mono);
+            color: var(--text-muted); font-size: 0.72rem;
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            font-weight: 500;
+        }
+
+        /* EXPERTISE */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.85rem;
+        }
+        .expertise-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            transition: border-color 0.2s;
+        }
+        .expertise-item:hover { border-color: var(--accent-subtle); }
+        .expertise-icon {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: var(--accent-light);
+            border: 1px solid var(--accent-subtle);
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.65rem;
+            letter-spacing: 0.02em;
+        }
+        .expertise-item h4 {
+            font-family: var(--mono);
+            font-size: 0.85rem; margin-bottom: 0.3rem; font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .expertise-item p {
+            font-family: var(--mono-body);
+            color: var(--text-secondary); font-size: 0.78rem; line-height: 1.65;
+            font-weight: 400;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1.5rem;
+        }
+        .cta-section h2 { margin-bottom: 0.65rem; }
+        .cta-section p {
+            font-family: var(--mono-body);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.75rem;
+            max-width: 520px;
+            margin-left: auto; margin-right: auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        .social-row {
+            display: flex; justify-content: center;
+            gap: 0.65rem; flex-wrap: wrap;
+        }
+        .social-btn {
+            font-family: var(--mono);
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.55rem 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-weight: 500; font-size: 0.8rem;
+            transition: all 0.2s;
+            background: var(--surface);
+        }
+        .social-btn:hover {
+            border-color: var(--accent); color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.1);
+        }
+        .social-btn svg { width: 16px; height: 16px; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 1.75rem 1.5rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* RESPONSIVE - TABLET */
+        @media (max-width: 768px) {
+            .hero { padding: 3rem 1.25rem 2.5rem; }
+            section { padding: 2.5rem 1.25rem; }
+            .about-grid { grid-template-columns: repeat(2, 1fr); }
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+            .repo-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-card { padding: 1.25rem 1.35rem; }
+        }
+
+        /* RESPONSIVE - MOBILE */
+        @media (max-width: 540px) {
+            body { font-size: 13px; }
+            nav .links { display: none; }
+            nav .links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(247,249,252,0.98);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-bottom: 1px solid var(--border);
+                padding: 0.85rem 1.25rem;
+                gap: 0.85rem;
+            }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 2.25rem 1.25rem 1.75rem; }
+            .hero h1 { font-size: 1.4rem; }
+            .hero .subtitle { font-size: 0.82rem; }
+            section { padding: 2rem 1.25rem; }
+            section h2 { font-size: 1.1rem; }
+            .about-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+            .stat-card { padding: 0.85rem 0.75rem; }
+            .stat-card .num { font-size: 1.35rem; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .repo-grid { grid-template-columns: 1fr; }
+            .career-timeline { padding-left: 1.25rem; }
+            .career-name { font-size: 0.75rem; }
+            .featured-card { padding: 1.1rem; }
+            .featured-card h3 { font-size: 0.95rem; }
+            .btn { padding: 0.55rem 1rem; font-size: 0.78rem; }
+            .cta-section { padding: 2.5rem 1.25rem; }
+            .social-row { gap: 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="/broking-kyc/">KYC Onboarding Spec</a>...</p>
+
+<nav>
+    <div class="inner">
+        <div class="logo">Rakesh<span class="accent">_</span>Waghela</div>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="links">
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#expertise">expertise</a>
+            <a href="#connect">connect</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="label">// open to collaborate</div>
+    <h1>I build <span class="highlight">backend systems</span><br>that power fintech at scale.</h1>
+    <p class="subtitle">
+        Engineering leader with 17+ years shipping production systems across broking, payments, healthcare, and gaming.
+        Most recently led engineering at Dhan (Raise Financial Services), building onboarding, engagement, and trading infrastructure. Currently on sabbatical and open to the next big thing.
+    </p>
+    <div class="cta-row">
+        <a href="https://www.linkedin.com/in/rakeshwaghela/" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+        </a>
+        <a href="https://github.com/javajack" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+        </a>
+        <a href="#projects" class="btn btn-outline">View Projects &#8595;</a>
+    </div>
+</header>
+
+<div class="divider"><hr></div>
+
+<section id="about">
+    <h2>// Background</h2>
+    <p class="section-sub">17+ years of building things that handle real money and real users.</p>
+
+    <div class="about-grid">
+        <div class="stat-card">
+            <div class="num">17+</div>
+            <div class="desc">Years in backend engineering, architecture, and team leadership</div>
+        </div>
+        <div class="stat-card">
+            <div class="num">6</div>
+            <div class="desc">Companies across fintech, banking, gaming, healthcare, and SaaS</div>
+        </div>
+        <div class="stat-card">
+            <div class="num">454</div>
+            <div class="desc">KYC fields mapped in broking-kyc spec, 97% auto-filled</div>
+        </div>
+        <div class="stat-card">
+            <div class="num">35.8K</div>
+            <div class="desc">Rows/sec throughput in xlfill Go library benchmarks</div>
+        </div>
+    </div>
+
+    <h3 class="all-repos-title" style="margin-top: 2rem; margin-bottom: 0.5rem;">// Career</h3>
+    <div class="career-timeline">
+        <div class="career-item"><span class="career-name">ICICI Bank</span></div>
+        <div class="career-item"><span class="career-name">OHUM Healthcare</span></div>
+        <div class="career-item"><span class="career-name">Nazara Games</span></div>
+        <div class="career-item"><span class="career-name">Propellum (SaaS)</span></div>
+        <div class="career-item"><span class="career-name">Synechron</span></div>
+        <div class="career-item"><span class="career-name">Dhan (Raise Financial Services)</span></div>
+    </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<section id="projects">
+    <h2>// Featured Projects</h2>
+    <p class="section-sub">Work that demonstrates product thinking and engineering depth.</p>
+
+    <div class="featured-card">
+        <span class="badge badge-product">Product &amp; Domain</span>
+        <h3><a href="https://github.com/javajack/broking-kyc" target="_blank" rel="noopener">broking-kyc</a></h3>
+        <p>
+            Production-grade KYC onboarding specification for Indian stock broking. Covers an 8-screen user journey completing in ~5 minutes, mapping 454 fields across 30 datasets with 97% pre-fill via DigiLocker, KRA, and CKYC. Evaluates 25+ vendors across 14 integration categories. Full SEBI/KRA/CKYC compliance.
+        </p>
+        <div class="meta">
+            <span class="lang"><span class="lang-dot dot-html"></span> HTML</span>
+        </div>
+        <div class="tag-list">
+            <span class="tag tag-green">sebi</span>
+            <span class="tag tag-green">kyc</span>
+            <span class="tag tag-green">ekyc</span>
+            <span class="tag tag-green">ckyc</span>
+            <span class="tag tag-green">onboarding</span>
+            <span class="tag tag-green">stockbroking</span>
+            <span class="tag tag-green">digilocker</span>
+            <span class="tag tag-green">pmla</span>
+        </div>
+        <div class="card-links">
+            <a href="https://javajack.github.io/broking-kyc/" target="_blank" rel="noopener">Live Docs &#8594;</a>
+            <a href="https://github.com/javajack/broking-kyc" target="_blank" rel="noopener">Source &#8594;</a>
+        </div>
+    </div>
+
+    <div class="featured-card">
+        <span class="badge badge-tech">Engineering</span>
+        <h3><a href="https://github.com/javajack/xlfill" target="_blank" rel="noopener">xlfill</a></h3>
+        <p>
+            Template-first Excel filling library for Go, inspired by JXLS 3.0. Design your .xlsx templates visually with fonts, colors, and formatting, then fill them with data using jx: commands. Supports iteration, conditionals, images, merged cells, formulas, and grouping. Benchmarked at 35,800 rows/sec.
+        </p>
+        <div class="meta">
+            <span class="lang"><span class="lang-dot dot-go"></span> Go</span>
+        </div>
+        <div class="tag-list">
+            <span class="tag">golang</span>
+            <span class="tag">excel</span>
+            <span class="tag">template</span>
+            <span class="tag">library</span>
+            <span class="tag">xlsx</span>
+        </div>
+        <div class="card-links">
+            <a href="https://javajack.github.io/xlfill/" target="_blank" rel="noopener">Documentation &#8594;</a>
+            <a href="https://github.com/javajack/xlfill" target="_blank" rel="noopener">Source &#8594;</a>
+        </div>
+    </div>
+
+    <div class="featured-card">
+        <span class="badge badge-ai">AI + Trading</span>
+        <h3><a href="https://github.com/javajack/skill-algotrader" target="_blank" rel="noopener">skill-algotrader</a></h3>
+        <p>
+            Quantitative trading skill for Indian equity markets with Zerodha integration. Generate trading bots, fetch live index data, and manage risk, all through Claude Code. Built as a Claude Code skill for agentic algo-trading workflows.
+        </p>
+        <div class="meta">
+            <span class="lang"><span class="lang-dot dot-python"></span> Python</span>
+        </div>
+        <div class="tag-list">
+            <span class="tag tag-purple">algorithmic-trading</span>
+            <span class="tag tag-purple">claude-code</span>
+            <span class="tag tag-purple">ai-agent</span>
+            <span class="tag tag-purple">zerodha</span>
+            <span class="tag tag-purple">trading-bot</span>
+        </div>
+        <div class="card-links">
+            <a href="https://github.com/javajack/skill-algotrader" target="_blank" rel="noopener">Source &#8594;</a>
+        </div>
+    </div>
+
+    <h3 class="all-repos-title">All Repositories</h3>
+    <div class="repo-grid">
+        <div class="repo-card">
+            <h4><a href="https://github.com/javajack/momentum-trading-strategy" target="_blank" rel="noopener">momentum-trading-strategy</a></h4>
+            <p>Stock-rotation bot with Nifty 100 &amp; Midcap 100. Momentum-based quantitative strategy for Indian equity markets.</p>
+            <span class="lang"><span class="lang-dot dot-python"></span> Python</span>
+        </div>
+        <div class="repo-card">
+            <h4><a href="https://github.com/javajack/astro-starlight-docs-template" target="_blank" rel="noopener">astro-starlight-docs-template</a></h4>
+            <p>Astro Starlight documentation template optimised for SEO, LLM discoverability, and analytics tracking.</p>
+            <span class="lang"><span class="lang-dot dot-js"></span> JavaScript</span>
+        </div>
+        <div class="repo-card">
+            <h4><a href="https://github.com/javajack/design-universe" target="_blank" rel="noopener">design-universe</a></h4>
+            <p>Design skills, patterns, and visual references for product and engineering work.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<section id="expertise">
+    <h2>// What I Bring</h2>
+    <p class="section-sub">The intersection of deep tech and deep domain.</p>
+
+    <div class="expertise-grid">
+        <div class="expertise-item">
+            <div class="expertise-icon">SYS</div>
+            <h4>Backend Architecture</h4>
+            <p>Java, Go, Python. Distributed systems, event-driven design, API design at scale. Over a decade of JVM expertise.</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">FIN</div>
+            <h4>Fintech &amp; Regulatory</h4>
+            <p>SEBI compliance, KYC/KRA/CKYC, trading systems, payments, penny-drop verification, DigiLocker integrations.</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">PRD</div>
+            <h4>Product Engineering</h4>
+            <p>End-to-end ownership from spec to production. KYC onboarding flows, trading platforms, engagement systems.</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">AI</div>
+            <h4>AI &amp; Agentic Systems</h4>
+            <p>Building Claude Code skills, AI-powered trading bots, and exploring agentic workflows for engineering and finance.</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">ENG</div>
+            <h4>Engineering Leadership</h4>
+            <p>Hiring, mentoring, and scaling engineering teams. Setting technical standards and building culture at startups.</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">OSS</div>
+            <h4>Open Source</h4>
+            <p>Arctic Code Vault Contributor. Building production-grade libraries (xlfill) and comprehensive domain specifications (broking-kyc).</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<section id="connect" class="cta-section">
+    <h2>// Let's Build Something Together</h2>
+    <p>
+        Open to CTO, co-founder, principal engineer, or consulting engagements. If you're solving hard problems in fintech, infrastructure, or AI, let's talk.
+    </p>
+    <div class="social-row">
+        <a href="https://www.linkedin.com/in/rakeshwaghela/" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+        </a>
+        <a href="https://github.com/javajack" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+        </a>
+        <a href="https://x.com/webiyo" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter / X
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Rakesh Waghela</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.querySelector('.links').classList.remove('open');
+        });
+    });
+</script>
+
 </body>
 </html>
